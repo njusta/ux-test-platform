@@ -525,7 +525,7 @@ public class DatePickerTest extends BaseClass {
         Assert.assertTrue((dateInDateField.equals(value)), "In '" + state + "' inputState, the date in the dateField text box and the one selected in the calendar doesn't match");
     }
 
-    @Test(testName = "Mobile: Calendar Close Test", dataProvider = "Calendar Close Test Data", groups = "mobile-regression", retryAnalyzer = RetryAnalyzer.class)
+    @Test(testName = "Mobile: Calendar Close Test", dataProvider = "Calendar Close Test Data", groups = "mobile-regression1", retryAnalyzer = RetryAnalyzer.class)
     private void calendarCloseMobileTest(String closeType, String calendarCloseCase, String[] state, By[] dateFieldElement, By calendarElement, String[] dateFieldClass, boolean expDateFieldFocus, String dateFieldFocusState) throws InterruptedException {
         for (int i = 0; i < 2; i++) {
             String[] detailsPropertiesList = new String[]{"elementId", "date-picker-target", "componentName", "DatePicker"};
@@ -612,29 +612,6 @@ public class DatePickerTest extends BaseClass {
         isWidth = commonUtils.assertValue(width, "150px", "date input field 'min-width' is not as per the spec");
         //commonUtils.setWindowSize(800, 800);
         Assert.assertTrue(isColor && isWidth);
-    }
-
-    //change handler
-    @Test(testName = "Mobile: Change Handler Test", dataProvider = "Change Handler Test Data", groups = "mobile-regression", retryAnalyzer = RetryAnalyzer.class)
-    private void changeHandlerMobileTest(String operationType) {
-        if ((operationType.equals("keys"))) {
-            throw new SkipException("focus operation not yet supported in appium drivers");
-        }
-        String[] detailsPropertiesList = new String[]{"elementId", "date-picker-target", "componentName", "DatePicker"};
-        String[] propsPropertiesList = new String[]{"inputState", "default", "dateFormat", "mm/dd/yyyy", "labelText", "Select date", "changeHandler", "function () {return alert('clicked!');}"};
-
-        setConfigAndLaunch(detailsPropertiesList, propsPropertiesList, datepickerJSFilePath, "mobile");
-
-        commonUtils.click(datepickerPgObj.dateFieldDefault, "mobile");
-
-        if (operationType.equals("mouse")) {
-            commonUtils.click(By.xpath(currentDateXpath + "/div/div"), "mobile");
-        }
-
-        changeHandlerText = appium.switchTo().alert().getText();
-        appium.switchTo().alert().accept();
-        isChangeHandlerText = commonUtils.assertValue(changeHandlerText, "clicked!", "change handler didn't trigger the event for operationType: '" + operationType + "'");
-        Assert.assertTrue(isChangeHandlerText);
     }
 
     @Test(testName = "Mobile: Date Format Test", dataProvider = "Date Format Test Data", groups = "mobile-regression")

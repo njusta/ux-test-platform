@@ -493,19 +493,21 @@ public class TimePickerTest extends BaseClass {
         Assert.assertTrue((timeInTimeField.equals(value)), "In '" + state + "' inputState, the time in the timeField text box and the one selected in the dropdown doesn't match");
     }
 
-    @Test(testName = "Mobile: DropDown Close Test", dataProvider = "DropDown Close Test Data", groups = "mobile-regression", retryAnalyzer = RetryAnalyzer.class)
+    @Test(testName = "Mobile: DropDown Close Test", dataProvider = "DropDown Close Test Data", groups = "mobile-regression1", retryAnalyzer = RetryAnalyzer.class)
     private void dropDownCloseMobileTest(String closeType, String dropDownCloseCase, String[] state, By[] timeFieldElement, By dropDownElement, String[] timeFieldClass, boolean expTimeFieldFocus, String timeFieldFocusState) {
 
         for (int i = 0; i < 2; i++) {
             String[] detailsPropertiesList = new String[]{"elementId", "time-picker-target", "componentName", "TimePicker"};
             String[] propsPropertiesList = new String[]{"inputState", state[i], "timeFormat", "hh:mm", "labelText", "Select time"};
             setConfigAndLaunch(detailsPropertiesList, propsPropertiesList, timepickerJSFilePath, "mobile");
+            commonUtils.printFileContents(timepickerJSFilePath);
 
             commonUtils.click(timeFieldElement[i], "mobile");
 
             //With Selection
             if (closeType.equals("with-selection")) {
                 commonUtils.click(timepickerPgObj.firstTimeItemInDropDown, "mobile");
+                System.out.println("hi");
                 if (dropDownCloseCase.equals("makes a selection from the dropdown")) {
                     commonUtils.click(timeFieldElement[i], "mobile");
                     commonUtils.click(By.xpath("//li[2]"), "mobile");
@@ -600,30 +602,6 @@ public class TimePickerTest extends BaseClass {
             log.info("dropdown container 'min-width' is not as per the spec, actual: " + width);
         }
         Assert.assertTrue(isWidth);//verify with for dropdown container
-    }
-
-    //change handler
-    @Test(testName = "Mobile: Change Handler Test", dataProvider = "Change Handler Test Data", groups = "mobile-regression", retryAnalyzer = RetryAnalyzer.class)
-    private void changeHandlerMobileTest(String operationType) {
-        if ((operationType.equals("keys"))) {
-            throw new SkipException("keyboard operations not yet supported in firefox/safari/ie browser drivers");
-        }
-
-        String[] detailsPropertiesList = new String[]{"elementId", "time-picker-target", "componentName", "TimePicker"};
-        String[] propsPropertiesList = new String[]{"inputState", "default", "timeFormat", "hh:mm", "labelText", "Select time", "changeHandler", "function () {return alert('clicked!');}"};
-
-        setConfigAndLaunch(detailsPropertiesList, propsPropertiesList, timepickerJSFilePath, "mobile");
-
-        commonUtils.click(timepickerPgObj.timeFieldDefault, "mobile");
-
-        if (operationType.equals("mouse")) {
-            commonUtils.click(timepickerPgObj.firstTimeItemInDropDown, "mobile");
-        }
-
-        changeHandlerText = appium.switchTo().alert().getText();
-        appium.switchTo().alert().accept();
-        isChangeHandlerText = commonUtils.assertValue(changeHandlerText, "clicked!", "change handler didn't trigger the event for operationType: '" + operationType + "'");
-        Assert.assertTrue(isChangeHandlerText);
     }
 
     //negative tests
