@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "pearson-elements": "^1.0.6",
-    "@pearson-components/app-header": "^2.0.3"
+    "@pearson-components/app-header": "^2.0.3",
+    "@pearson-components/coach-mark": "0.3.0"
   }
 }
