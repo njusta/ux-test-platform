@@ -17,6 +17,20 @@ cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/fonts ~/buil
 cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/icons ~/build/Pearson-Higher-Ed/ux-test-platform/
 }
 
+install_glp_elements_sdk() {
+echo -e "******************************\\n    Installing elements-sdk: $1   \\n******************************"
+git clone https://github.com/Pearson-Higher-Ed/elements-sdk.git
+cd elements-sdk
+git checkout $1
+npm install &>/dev/null
+npm run build &>/dev/null
+cp ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/dist.compounds.js ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/glp/functional/jsfiles/
+cp ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/eventInstantiator.compounds.js ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/glp/functional/jsfiles/
+cp ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/css/elements.css ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/glp/css/
+cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/fonts ~/build/Pearson-Higher-Ed/ux-test-platform/
+cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/icons ~/build/Pearson-Higher-Ed/ux-test-platform/
+}
+
 install_compounds_sdk() {
 echo -e "******************************\\n    Installing compounds sdk: $1   \\n******************************"
 cd ~/build/Pearson-Higher-Ed/ux-test-platform/
@@ -250,6 +264,10 @@ elif [[ $component == "coach-mark" ]]
 then
 install_coachMark $feature_branch
 
+elif [[ $component == "glp-elements-sdk" ]]
+then
+install_glp_elements_sdk $feature_branch
+
 # Below condition is to install all the "master" branch of components for the regression test run, regression split into 3 suites
 elif [[ $component == "regression" ]]
 then
@@ -270,6 +288,10 @@ fi
 if [[ $TEST_SUITE == "elements-sdk" ]]
 then
 install_elements_sdk master &
+fi
+if [[ $TEST_SUITE == "glp-elements-sdk" ]]
+then
+install_elements_sdk unstable-2.0-GLP &
 fi
 wait
 fi

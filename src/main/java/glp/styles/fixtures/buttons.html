@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../glp/css/elements.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<script>
+    if (!document.getElementById('pe-icons-sprite')) {
+        var pe_ajax = new XMLHttpRequest();
+        pe_ajax.open("GET", "/icons/p-icons-sprite-1.1.svg", true);
+        pe_ajax.responseType = "document";
+        pe_ajax.onload = function (e) {
+            document.body.insertBefore(
+                pe_ajax.responseXML.documentElement,
+                document.body.childNodes[0]
+            );
+        }
+        pe_ajax.send();
+    }
+</script>
+
+<h2> Buttons Demo - GLP </h2>
+<!-- Tertiary -->
+<button id = "tertiary-btn" class="pe-btn__tertiary">Tertiary</button>
+
+<!-- Default -->
+<br>
+<button id="default-btn" class="pe-btn">Default</button>
+<!--<div id="default-btn-hover" class="pe-btn" role="button" tabindex="0">DIV type-DefaultBtn-hover</div>-->
+<button id="default-btn-disabled" class="pe-btn" disabled>DefaultBtn-disabled</button>
+<!--<input class="pe-btn" type="submit" value="Submit" />-->
+
+<!-- Primary -->
+<br><button  id="primary-btn" class="pe-btn__primary">PrimaryBtn</button>
+<!--<a id="primary-btn-hover" class="pe-btn__primary" role="button">Link type-PrimaryBtn-hover</a>-->
+
+<!-- CTA -->
+<br><button id="cta-btn" class="pe-btn__cta">Call To Action</button>
+
+<!-- Link Buttons -->
+<br><button id="link-btn" type="button" class="pe-link">Button</button>
+<button id = "link-btn-2.0" type="button" class="pe-link--btn">Link button 2.0</button>
+<button id = "link-btn-2.0-disabled" type="button" class="pe-link--btn" disabled>Disabled link button 2.0</button>
+<!--<br><a href="#void" class="pe-btn" role="button">Link</a>-->
+<!--<a href="#void" class="pe-btn__primary&#45;&#45;btn_large" role="button">Large Primary Link</a>-->
+
+<!-- Sizes -->
+<br><button id="small-btn" class="pe-btn--btn_small" style="marginRight: 3">Small</button>
+<!--<button id="large-btn-withCTA" class="pe-btn__cta&#45;&#45;btn_large">CTA Large</button>-->
+<button id="large-btn" class="pe-btn--btn_large">Large</button>
+
+<br>
+
+<button id = "small-btn-calendar18icon" type="button" class="pe-btn--btn_small" aria-label="Start date">
+    Small with icon
+    <svg aria-hidden="true"
+         focusable="false"
+         class="pe-icon--calendar-18">
+        <use xlink:href="#calendar-18"></use>
+    </svg>
+</button><button id = "large-btn-calendar18icon" type="button" class="pe-btn__cta--btn_large" aria-label="End date">
+    CTA large with icon
+    <svg aria-hidden="true"
+         focusable="false"
+         class="pe-icon--calendar-18">
+        <use xlink:href="#calendar-18"></use>
+    </svg>
+</button>
+<br>
+<button id = "small-btn-calendar24icon" type="button" class="pe-btn__primary--btn_small" aria-label="End date">
+    Primary small with icon
+    <svg aria-hidden="true"
+         focusable="false"
+         class="pe-icon--calendar-24">
+        <use xlink:href="#calendar-24"></use>
+    </svg>
+</button><button id = "large-btn-calendar24icon" type="button" class="pe-btn__tertiary--btn_large" aria-label="Start date">
+    Tertiary large with icon
+    <svg aria-hidden="true"
+         focusable="false"
+         class="pe-icon--calendar-24">
+        <use xlink:href="#calendar-24"></use>
+    </svg>
+</button>
+</body>
+</html>

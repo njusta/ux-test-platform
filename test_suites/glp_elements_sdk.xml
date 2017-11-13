@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ElementsSDK Test Suite - GLP">
+    <groups>
+        <run>
+            <include name="desktop-regression"/>
+        </run>
+    </groups>
+    <!--<test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes" thread-count="12">-->
+        <!--<classes>-->
+        <!--</classes>-->
+    <!--</test>-->
+     <!-- Styles(CSS) Tests -->
+    <test name="ElementsSDK: Styles(CSS) Tests - GLP" parallel="classes" thread-count="10">
+        <classes>
+            <class name="glpTests.styles.GLPButtonsTest"/>
+        </classes>
+    </test>
+</suite>
