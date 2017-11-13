@@ -3,7 +3,7 @@
 <suite name="temporary-compounds_sdk Test Suite">
     <groups>
         <run>
-            <include name="desktop-ci"/>
+            <include name="desktop-regression"/>
         </run>
     </groups>
     <test name="temporary-compounds_sdk: Functional(JavaScript) Tests" parallel="classes" thread-count="11">
