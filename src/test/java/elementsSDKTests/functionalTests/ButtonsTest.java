@@ -309,6 +309,12 @@ public class ButtonsTest extends BaseClass {
         Assert.assertFalse(isBackgroundColor && isHeight);
     }
 
+    /**
+     *
+     * Common Methods
+     */
+
+
     private String constructPath(String absolutePath) {
         String path = absolutePath.substring(0, absolutePath.lastIndexOf("elementsSDK/functional")) + "src/main/java/" + absolutePath.substring(absolutePath.indexOf("elementsSDK/functional"));
         return path;

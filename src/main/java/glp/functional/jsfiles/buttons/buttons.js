@@ -7,9 +7,9 @@ function init() {
                 btnType: 'cta',
                 btnSize: 'large',
                 children: 'children',
-                onClick: (function () {
+               /* onClick: (function () {
                     return alert('Hello World!');
-                })
+                })*/
             }
         }
     }));
