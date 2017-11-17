@@ -28,7 +28,7 @@ before_script:
 - python -m SimpleHTTPServer &>/dev/null &
 
 script:
-- export component=glp-elements-sdk
+- export component=glp-elements-sdk1
 - export feature_branch=PROTO-235
 - chmod 777 ./src/main/shell_scripts/components.sh
 - ./src/main/shell_scripts/components.sh

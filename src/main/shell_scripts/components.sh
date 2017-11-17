@@ -18,7 +18,7 @@ cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/elements-sdk/build/icons ~/buil
 }
 
 install_glp_elements_sdk() {
-echo -e "******************************\\n    Installing elements-sdk: $1   \\n******************************"
+echo -e "******************************\\n    Installing glp-elements-sdk: $1   \\n******************************"
 git clone https://github.com/Pearson-Higher-Ed/elements-sdk.git
 cd elements-sdk
 git checkout $1
