@@ -4,8 +4,8 @@ function init() {
             elementId: 'button-target',
             componentName: 'Button',
             props: {
-                btnType: 'default',
-                btnSize: 'small',
+                btnType: 'cta',
+                btnSize: 'large',
                 children: 'children',
                 onClick: (function () {
                     return alert('Hello World!');
