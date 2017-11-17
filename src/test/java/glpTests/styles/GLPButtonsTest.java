@@ -100,7 +100,7 @@ public class GLPButtonsTest extends BaseClass {
     @Test(testName = "Verify Buttons Border Test", dataProvider = "Buttons Border Test Data", groups = "desktop-regression")
     private void verifyButtonBorderTest(String type, boolean hover, By elem, String expStyle, String[] expColor, String expWidth) {
         if (hover) {
-            if (browser.equals("safari")) {
+            if (browser.equals("safari") || browser.equals("firefox")) {
                 throw new SkipException("Hover operation not yet supported in firefox/safari browser drivers");
             }
             commonUtils.hoverOnElement(elem);
@@ -138,7 +138,7 @@ public class GLPButtonsTest extends BaseClass {
 
     @Test(testName = "Verify Button Test-Hover state", dataProvider = "Button-Hover state Test Data", groups = {"desktop-regression"})
     private void buttonHoverStateTest(String type, By elem, String[] expColor, String[] expBgColor) throws Exception {
-        if (browser.equals("safari")) {
+        if (browser.equals("safari") || browser.equals("firefox")) {
             throw new SkipException("Hover operation not yet supported in firefox/safari browser drivers");
         }
         commonUtils.hoverOnElement(elem);
@@ -167,19 +167,19 @@ public class GLPButtonsTest extends BaseClass {
 
     @Test(testName = "Verify Button Test-Focus state", dataProvider = "Button-Focus state Test Data", groups = {"desktop-regression"})
     private void buttonFocusStateTest(String type, String elem, String[] expColor, String[] expBgColor) throws Exception {
-        if (browser.equals("safari")) {
-            throw new SkipException("Hover operation not yet supported in firefox/safari browser drivers");
+        if (browser.equals("safari") || browser.equals("firefox")) {
+            throw new SkipException("Focus operation not yet supported in firefox/safari browser drivers");
         }
         commonUtils.focusOnElementById(elem);
         color = commonUtils.getCSSValue(By.id(elem), "color");
         backgroundColor = commonUtils.getCSSValue(By.id(elem), "background-color");
         isColor = commonUtils.assertCSSProperties("color", color, expColor);
         if (!isColor) {
-            log.info(" Color of " + type + " in hover state is not as per spec, actual: " + color);
+            log.info(" Color of " + type + " in focus state is not as per spec, actual: " + color);
         }
         isBackgroundColor = commonUtils.assertCSSProperties("background-color", backgroundColor, expBgColor);
         if (!isBackgroundColor) {
-            log.info(" Bg Color of " + type + " in hover state is not as per spec, actual: " + backgroundColor);
+            log.info(" Bg Color of " + type + " in focus state is not as per spec, actual: " + backgroundColor);
         }
         Assert.assertTrue(isColor && isBackgroundColor);
     }
@@ -269,14 +269,14 @@ public class GLPButtonsTest extends BaseClass {
 
     @Test(testName = "Verify Link Button Test-Focus state", dataProvider = "Link Button-Focus state Test Data", groups = {"desktop-regression"})
     private void linkButtonFocusStateTest(String type, String elem, String[] expColor, String expTextDecoration) throws Exception {
-        if (browser.equals("safari") || browser.equals("ie")) {
-            throw new SkipException("Hover operation not yet supported in firefox/safari browser drivers");
+        if (browser.equals("safari") || browser.equals("firefox") || browser.equals("ie")) {
+            throw new SkipException("Focus operation not yet supported in firefox/safari browser drivers");
         }
         commonUtils.focusOnElementById(elem);
         color = commonUtils.getCSSValue(By.id(elem), "color");
         isColor = commonUtils.assertCSSProperties("color", color, expColor);
         if (!isColor) {
-            log.info(" Color of " + type + " is not as per spec, actual: " + color);
+            log.info(" Color of " + type + " in Focus state is not as per spec, actual: " + color);
         }
         textDecoration = commonUtils.getCSSValue(By.id(elem), textDecorationProperty);
         isTextDecoration = commonUtils.assertValue(textDecoration, expTextDecoration, "Text decoration of " + type + " is not as per spec");
