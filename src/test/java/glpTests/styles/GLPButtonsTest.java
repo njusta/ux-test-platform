@@ -399,7 +399,7 @@ public class GLPButtonsTest extends BaseClass {
 
 
     @Test(testName = "Moile : Verify Default Button Test-Disabled", groups = {"mobile-regression"})
-    private void defaultButtonDisabledStateMobileTest(String cssProperty, String[] expectedCSSValue) throws Exception {
+    private void defaultButtonDisabledStateMobileTest() throws Exception {
         color = commonUtils.getCSSValue(btnPgObect.defaultBtnDisabled, "color", "mobile");
         isColor = commonUtils.assertCSSProperties("color", color, new String[]{commonUtils.hex2Rgb("#C7C7C7"), commonUtils.hex2RgbWithoutTransparency("#C7C7C7")});
         if (!isColor) {
