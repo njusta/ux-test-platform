@@ -65,7 +65,7 @@ public class GLPButtonsTest extends BaseClass {
         commonUtils.printFileContents(buttonsJSFilePath);
     }
 
-        
+
     /**
      * Common Methods
      */
