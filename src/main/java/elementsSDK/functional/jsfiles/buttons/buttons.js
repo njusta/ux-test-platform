@@ -8,7 +8,7 @@ function init() {
 			elementId: 'button-target',
 			componentName: 'Button',
 			props: {
-				btnType: 'primary',
+				btnType: '',
 				btnSize: 'large',
 				children: 'children',
 				onClick: (function () {
