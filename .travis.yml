@@ -28,7 +28,7 @@ before_script:
 - python -m SimpleHTTPServer &>/dev/null &
 
 script:
-- export component=compounds
+- export component=compounds-sdk
 - export feature_branch=DES-840
 - chmod 777 ./src/main/shell_scripts/components.sh
 - ./src/main/shell_scripts/components.sh
