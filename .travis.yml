@@ -7,7 +7,7 @@ jdk:
 env:
   matrix:
   - TEST_SUITE=desktop_regression_suite.xml
-  - TEST_SUITE=mobile_regression_suite.xml
+  #- TEST_SUITE=mobile_regression_suite.xml
   global:
   - export MAVEN_OPTS="-Xms1024m -Xmx4096m -XX:PermSize=1024m"
   - export JAVA_OPTS="-Xmx512m"
@@ -18,11 +18,11 @@ env:
 addons:
   sauce_connect:
     no_ssl_bump_domains: all
-  apt:
-      sources:
-        - ubuntu-toolchain-r-test
-      packages:
-        - g++-4.8
+#  apt:
+#      sources:
+#        - ubuntu-toolchain-r-test
+#      packages:
+#        - g++-4.8
 
 install:
 - mvn clean install -DskipTests=true -q -Dmaven.javadoc.skip=true -B -V
