@@ -269,12 +269,12 @@ install_drawer master &
 install_contextualHelp master &
 install_avatarDisplay master &
 install_slider master &
-#install_alerts master &
-#install_pagination master &
-#install_modal master &
-#install_loadingIndicator master &
-#install_coachMark master &
-#install_elements_sdk master &
+install_alerts master &
+install_pagination master &
+install_modal master &
+install_loadingIndicator master &
+install_coachMark master &
+install_elements_sdk master &
 fi
 jobs -l
 wait
