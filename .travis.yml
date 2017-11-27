@@ -8,7 +8,7 @@ jdk:
 env:
   matrix:
   - TEST_SUITE=desktop_regression_suite.xml
-  #- TEST_SUITE=mobile_regression_suite.xml
+  - TEST_SUITE=mobile_regression_suite.xml
   global:
   - export MAVEN_OPTS="-Xms1024m -Xmx4096m -XX:PermSize=1024m"
   - export JAVA_OPTS="-Xmx512m"
@@ -36,7 +36,7 @@ before_script:
 - python -m SimpleHTTPServer &>/dev/null &
 
 script:
-#- free -m
+- free -m
 - export component=regression
 - export feature_branch=v1
 - chmod 777 ./src/main/shell_scripts/components.sh
