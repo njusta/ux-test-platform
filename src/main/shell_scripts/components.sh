@@ -254,7 +254,7 @@ install_coachMark $feature_branch
 elif [[ $component == "regression" ]]
 then
 install_appHeader master &
-#install_drawer master &
+install_drawer master &
 #install_contextualHelp master &
 #install_avatarDisplay master &
 #install_slider master &
@@ -263,14 +263,6 @@ install_appHeader master &
 #install_modal master &
 #install_loadingIndicator master &
 #install_coachMark master &
-fi
-if [[ $TEST_SUITE =~ "elements_styles_sdk" ]]
-then
-install_elements_sdk master &
-fi
-if [[ $TEST_SUITE =~ "elements_functional_sdk" ]]
-then
-install_elements_sdk master &
 fi
 jobs -l
 wait
