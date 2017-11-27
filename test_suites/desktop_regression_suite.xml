@@ -9,7 +9,6 @@
     <!-- Stand Alone Tests -->
     <test name="StandAlone Tests" parallel="classes">
         <classes>
-            <class name="standAloneTests.AppHeaderTest"/>
             <class name="standAloneTests.ContextualHelpTest"/>
             <class name="standAloneTests.DrawerTest"/>
             <class name="standAloneTests.AvatarDisplayTest"/>
@@ -18,6 +17,11 @@
             <class name="standAloneTests.PaginationTest"/>
             <class name="standAloneTests.ModalTest"/>
             <class name="standAloneTests.LoadingIndicatorTest"/>
+        </classes>
+    </test>
+    <test name="App Header Test">
+        <classes>
+            <class name="standAloneTests.AppHeaderTest"/>
         </classes>
     </test>
     <!--Functional(JavaScript) Tests -->
