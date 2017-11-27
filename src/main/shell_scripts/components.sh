@@ -264,6 +264,7 @@ install_appHeader master &
 #install_modal master &
 #install_loadingIndicator master &
 #install_coachMark master &
+install_elements_sdk master &
 fi
 jobs -l
 wait
