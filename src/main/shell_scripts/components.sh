@@ -57,6 +57,7 @@ cp ~/build/Pearson-Higher-Ed/ux-test-platform/app-header/build/dist.app-header.j
 cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/app-header/node_modules/pearson-elements/dist/fonts ~/build/Pearson-Higher-Ed/ux-test-platform/
 cp ~/build/Pearson-Higher-Ed/ux-test-platform/app-header/node_modules/pearson-elements/dist/css/elements.css ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/standAlone/css/appHeader/
 cp -R ~/build/Pearson-Higher-Ed/ux-test-platform/app-header/images ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/standAlone/
+ls -ltr ~/build/Pearson-Higher-Ed/ux-test-platform/src/main/java/standAlone/jsfiles/appHeader/
 }
 
 install_contextualHelp(){
@@ -254,7 +255,7 @@ install_coachMark $feature_branch
 elif [[ $component == "regression" ]]
 then
 install_appHeader master &
-install_drawer master &
+#install_drawer master &
 #install_contextualHelp master &
 #install_avatarDisplay master &
 #install_slider master &
