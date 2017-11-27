@@ -274,3 +274,4 @@ install_elements_sdk master &
 fi
 jobs -l
 wait
+jobs -l
