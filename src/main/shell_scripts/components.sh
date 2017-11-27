@@ -271,6 +271,6 @@ fi
 if [[ $TEST_SUITE =~ "elements_functional_sdk" ]]
 then
 install_elements_sdk master &
-wait
 fi
+wait
 jobs -l
