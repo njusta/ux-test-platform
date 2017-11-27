@@ -254,9 +254,9 @@ install_coachMark $feature_branch
 elif [[ $component == "regression" ]]
 then
 install_appHeader master &
-install_drawer master &
-install_contextualHelp master &
-install_avatarDisplay master &
+#install_drawer master &
+#install_contextualHelp master &
+#install_avatarDisplay master &
 #install_slider master &
 #install_alerts master &
 #install_pagination master &
