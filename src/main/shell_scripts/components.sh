@@ -4,8 +4,6 @@ echo "component: $component"
 echo "feature_branch: $feature_branch"
 echo $UX_PLATFORM_ROOT_DIR
 
-${UX_PLATFORM_ROOT_DIR}/
-
 install_elements_sdk() {
 echo -e "******************************\\n    Installing elements-sdk: $1   \\n******************************"
 git clone https://github.com/Pearson-Higher-Ed/elements-sdk.git
