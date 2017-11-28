@@ -20,7 +20,7 @@
             <class name="standAloneTests.AppHeaderTest"/>
         </classes>
     </test>
-    <!--Functional(JavaScript) Tests -->
+    <!--Functional(JavaScript) Tests --> 
     <test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes">
         <classes>
             <class name="elementsSDKTests.functionalTests.CalendarTest"/>
