@@ -2,7 +2,7 @@
 
 echo "component: $component"
 echo "feature_branch: $feature_branch"
-echo $UX_PLATFORM_ROOT_DIR 
+echo $UX_PLATFORM_ROOT_DIR
 
 ${UX_PLATFORM_ROOT_DIR}/
 
