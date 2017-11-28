@@ -2,9 +2,9 @@
 
 echo "component: $component"
 echo "feature_branch: $feature_branch"
-echo $UX_PLATFORM_DIR
+echo $UX_PLATFORM_ROOT_DIR 
 
-${UX_PLATFORM_DIR}/
+${UX_PLATFORM_ROOT_DIR}/
 
 install_elements_sdk() {
 echo -e "******************************\\n    Installing elements-sdk: $1   \\n******************************"
@@ -13,41 +13,41 @@ cd elements-sdk
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/elements-sdk/build/dist.compounds.js ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/functional/jsfiles/
-cp ${UX_PLATFORM_DIR}/elements-sdk/build/eventInstantiator.compounds.js ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/functional/jsfiles/
-cp ${UX_PLATFORM_DIR}/elements-sdk/build/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/css/
-cp -R ${UX_PLATFORM_DIR}/elements-sdk/build/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/elements-sdk/build/icons ${UX_PLATFORM_DIR}/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/functional/jsfiles/
+cp ${UX_PLATFORM_ROOT_DIR}/elements-sdk/build/dist.compounds.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/functional/jsfiles/
+cp ${UX_PLATFORM_ROOT_DIR}/elements-sdk/build/eventInstantiator.compounds.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/functional/jsfiles/
+cp ${UX_PLATFORM_ROOT_DIR}/elements-sdk/build/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/css/
+cp -R ${UX_PLATFORM_ROOT_DIR}/elements-sdk/build/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/elements-sdk/build/icons ${UX_PLATFORM_ROOT_DIR}/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/functional/jsfiles/
 }
 
 install_compounds_sdk() {
 echo -e "******************************\\n    Installing compounds sdk: $1   \\n******************************"
-cd ${UX_PLATFORM_DIR}/
+cd ${UX_PLATFORM_ROOT_DIR}/
 git clone https://github.com/Pearson-Higher-Ed/compounds.git &>/dev/null
 cd compounds
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/compounds/build/dist.compounds.js ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/functional/jsfiles/
-cp ${UX_PLATFORM_DIR}/compounds/build/eventInstantiator.compounds.js ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/functional/jsfiles/
-cp ${UX_PLATFORM_DIR}/compounds/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/css/
-cp -R ${UX_PLATFORM_DIR}/compounds/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/compounds/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/compounds/build/dist.compounds.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/functional/jsfiles/
+cp ${UX_PLATFORM_ROOT_DIR}/compounds/build/eventInstantiator.compounds.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/functional/jsfiles/
+cp ${UX_PLATFORM_ROOT_DIR}/compounds/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/css/
+cp -R ${UX_PLATFORM_ROOT_DIR}/compounds/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/compounds/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
 }
 
 install_elements() {
 echo -e "******************************\\n    Installing elements: $1   \\n******************************"
-cd ${UX_PLATFORM_DIR}/
+cd ${UX_PLATFORM_ROOT_DIR}/
 git clone https://github.com/Pearson-Higher-Ed/elements.git &>/dev/null
 cd elements
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/elementsSDK/css/
-ls -ltr ${UX_PLATFORM_DIR}/elements/dist/
-cp -R ${UX_PLATFORM_DIR}/elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/elements/dist/icons ${UX_PLATFORM_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/elementsSDK/css/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/elements/dist/
+cp -R ${UX_PLATFORM_ROOT_DIR}/elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
 }
 
 install_appHeader(){
@@ -57,11 +57,11 @@ cd app-header
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/app-header/build/dist.app-header.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/appHeader/
-cp -R ${UX_PLATFORM_DIR}/app-header/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/app-header/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/appHeader/
-cp -R ${UX_PLATFORM_DIR}/app-header/images ${UX_PLATFORM_DIR}/src/main/java/standAlone/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/appHeader/
+cp ${UX_PLATFORM_ROOT_DIR}/app-header/build/dist.app-header.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/appHeader/
+cp -R ${UX_PLATFORM_ROOT_DIR}/app-header/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/app-header/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/appHeader/
+cp -R ${UX_PLATFORM_ROOT_DIR}/app-header/images ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/appHeader/
 }
 
 install_contextualHelp(){
@@ -71,11 +71,11 @@ cd contextual-help
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/contextual-help/build/dist.contextual-help.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/contextualHelp/
-cp -R ${UX_PLATFORM_DIR}/contextual-help/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/contextual-help/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/contextual-help/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/contextualHelp/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/contextualHelp/
+cp ${UX_PLATFORM_ROOT_DIR}/contextual-help/build/dist.contextual-help.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/contextualHelp/
+cp -R ${UX_PLATFORM_ROOT_DIR}/contextual-help/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/contextual-help/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/contextual-help/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/contextualHelp/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/contextualHelp/
 }
 
 install_drawer(){
@@ -85,8 +85,8 @@ cd drawer
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/drawer/build/dist.drawer.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/drawer/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/drawer/
+cp ${UX_PLATFORM_ROOT_DIR}/drawer/build/dist.drawer.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/drawer/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/drawer/
 }
 
 install_componentArchetype(){
@@ -97,9 +97,9 @@ git checkout $1
 npm install &>/dev/null
 npm run copy-utils
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/component-archetype/build/dist.component-name.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/componentArchetype/
-cp -R ${UX_PLATFORM_DIR}/component-archetype/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/component-archetype/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/componentArchetype/
+cp ${UX_PLATFORM_ROOT_DIR}/component-archetype/build/dist.component-name.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/componentArchetype/
+cp -R ${UX_PLATFORM_ROOT_DIR}/component-archetype/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/component-archetype/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/componentArchetype/
 }
 
 install_avatarDisplay(){
@@ -110,10 +110,10 @@ git checkout $1
 npm install &>/dev/null
 npm run copy-utils
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/avatar-display/build/dist.avatar-display.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/avatarDisplay/
-cp -R ${UX_PLATFORM_DIR}/avatar-display/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/avatar-display/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/avatarDisplay/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/avatarDisplay/
+cp ${UX_PLATFORM_ROOT_DIR}/avatar-display/build/dist.avatar-display.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/avatarDisplay/
+cp -R ${UX_PLATFORM_ROOT_DIR}/avatar-display/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/avatar-display/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/avatarDisplay/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/avatarDisplay/
 }
 
 install_slider(){
@@ -124,10 +124,10 @@ git checkout $1
 npm install &>/dev/null
 npm run copy-utils
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/slider/build/dist.slider.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/slider/
-cp ${UX_PLATFORM_DIR}/slider/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/slider/
-cp ${UX_PLATFORM_DIR}/slider/slider.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/slider/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/slider/
+cp ${UX_PLATFORM_ROOT_DIR}/slider/build/dist.slider.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/slider/
+cp ${UX_PLATFORM_ROOT_DIR}/slider/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/slider/
+cp ${UX_PLATFORM_ROOT_DIR}/slider/slider.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/slider/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/slider/
 }
 
 install_alerts(){
@@ -138,11 +138,11 @@ git checkout $1
 npm install &>/dev/null
 npm run copy-utils
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/alerts/build/dist.alerts.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/alerts/
-cp -R ${UX_PLATFORM_DIR}/alerts/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/alerts/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/alerts/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/alerts/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/alerts/
+cp ${UX_PLATFORM_ROOT_DIR}/alerts/build/dist.alerts.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/alerts/
+cp -R ${UX_PLATFORM_ROOT_DIR}/alerts/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/alerts/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/alerts/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/alerts/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/alerts/
 }
 
 install_pagination(){
@@ -153,11 +153,11 @@ git checkout $1
 npm install &>/dev/null
 #npm run copy-utils
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/pagination/build/dist.pagination.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/pagination/
-cp ${UX_PLATFORM_DIR}/pagination/build/eventInterface.pagination.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/pagination/
-cp -R ${UX_PLATFORM_DIR}/pagination/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/pagination/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/pagination/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/pagination/
+cp ${UX_PLATFORM_ROOT_DIR}/pagination/build/dist.pagination.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/pagination/
+cp ${UX_PLATFORM_ROOT_DIR}/pagination/build/eventInterface.pagination.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/pagination/
+cp -R ${UX_PLATFORM_ROOT_DIR}/pagination/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/pagination/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/pagination/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/pagination/
 }
 
 install_modal(){
@@ -167,12 +167,12 @@ cd modal
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/modal/build/dist.modal.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/modal/
-cp ${UX_PLATFORM_DIR}/modal/build/dev.modal.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/modal/
-cp -R ${UX_PLATFORM_DIR}/modal/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/modal/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/modal/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/modal/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/modal/
+cp ${UX_PLATFORM_ROOT_DIR}/modal/build/dist.modal.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/modal/
+cp ${UX_PLATFORM_ROOT_DIR}/modal/build/dev.modal.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/modal/
+cp -R ${UX_PLATFORM_ROOT_DIR}/modal/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/modal/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/modal/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/modal/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/modal/
 }
 
 install_loadingIndicator(){
@@ -182,12 +182,12 @@ cd loading-indicator
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/loading-indicator/build/dist.loadingIndicator.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
-cp ${UX_PLATFORM_DIR}/loading-indicator/build/dev.loadingIndicator.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
-cp -R ${UX_PLATFORM_DIR}/loading-indicator/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/loading-indicator/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/loading-indicator/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/loadingIndicator/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
+cp ${UX_PLATFORM_ROOT_DIR}/loading-indicator/build/dist.loadingIndicator.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
+cp ${UX_PLATFORM_ROOT_DIR}/loading-indicator/build/dev.loadingIndicator.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
+cp -R ${UX_PLATFORM_ROOT_DIR}/loading-indicator/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/loading-indicator/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/loading-indicator/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/loadingIndicator/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/loadingIndicator/
 }
 
 install_coachMark(){
@@ -197,12 +197,12 @@ cd coach-mark
 git checkout $1
 npm install &>/dev/null
 npm run build &>/dev/null
-cp ${UX_PLATFORM_DIR}/coach-mark/build/dist.coach-mark.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/coachMark/
-cp ${UX_PLATFORM_DIR}/coach-mark/build/dev.coach-mark.js ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/coachMark/
-cp -R ${UX_PLATFORM_DIR}/coach-mark/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_DIR}/
-cp -R ${UX_PLATFORM_DIR}/coach-mark/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_DIR}/
-cp ${UX_PLATFORM_DIR}/coach-mark/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_DIR}/src/main/java/standAlone/css/coachMark/
-ls -ltr ${UX_PLATFORM_DIR}/src/main/java/standAlone/jsfiles/coachMark/
+cp ${UX_PLATFORM_ROOT_DIR}/coach-mark/build/dist.coach-mark.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/coachMark/
+cp ${UX_PLATFORM_ROOT_DIR}/coach-mark/build/dev.coach-mark.js ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/coachMark/
+cp -R ${UX_PLATFORM_ROOT_DIR}/coach-mark/node_modules/pearson-elements/dist/fonts ${UX_PLATFORM_ROOT_DIR}/
+cp -R ${UX_PLATFORM_ROOT_DIR}/coach-mark/node_modules/pearson-elements/dist/icons ${UX_PLATFORM_ROOT_DIR}/
+cp ${UX_PLATFORM_ROOT_DIR}/coach-mark/node_modules/pearson-elements/dist/css/elements.css ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/css/coachMark/
+ls -ltr ${UX_PLATFORM_ROOT_DIR}/src/main/java/standAlone/jsfiles/coachMark/
 }
 
 # Below conditions are to install the components specific to its feature branch.
