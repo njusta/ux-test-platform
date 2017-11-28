@@ -25,7 +25,7 @@
         </classes>
     </test>
     <!--Functional(JavaScript) Tests -->
-    <test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes" thread-count="12">
+    <test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes">
         <classes>
             <class name="elementsSDKTests.functionalTests.AlertsTest"/>
             <class name="elementsSDKTests.functionalTests.ButtonsTest"/>
@@ -44,7 +44,7 @@
         </classes>
     </test>
     <!-- Styles(CSS) Tests -->
-    <test name="ElementsSDK: Styles(CSS) Tests" parallel="classes" thread-count="8">
+    <test name="ElementsSDK: Styles(CSS) Tests" parallel="classes">
         <classes>
             <class name="elementsSDKTests.stylesTests.InputsTest"/>
             <class name="elementsSDKTests.stylesTests.TypographyTest"/>
