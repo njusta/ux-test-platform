@@ -43,7 +43,7 @@ script:
 - ./src/main/shell_scripts/components.sh
 #- free -m
 - echo $TEST_SUITE
-- mvn -Dtest_suite_xml=$TEST_SUITE test
+- mvn -Xms256m -Xmx1024m -Dtest_suite_xml=$TEST_SUITE test
 - chmod 777 /home/travis/build/Pearson-Higher-Ed/ux-test-platform/target/surefire-reports/testng-results.xml
 - mvn -Dtest=TestNgXMLUpdater test
 - cat /home/travis/build/Pearson-Higher-Ed/ux-test-platform/src/test/java/testNgXMLUpdater/outputFilePath.xml
