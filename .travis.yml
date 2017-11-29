@@ -40,7 +40,7 @@ script:
 - export feature_branch=v1
 - chmod 777 ./src/main/shell_scripts/components.sh
 - ./src/main/shell_scripts/components.sh
-#- free -m
+- free -m
 - echo $TEST_SUITE
 - mvn -Dtest_suite_xml=$TEST_SUITE test
 - chmod 777 /home/travis/build/Pearson-Higher-Ed/ux-test-platform/target/surefire-reports/testng-results.xml
