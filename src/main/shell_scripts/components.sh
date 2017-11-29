@@ -261,6 +261,7 @@ install_slider master &
 fi
 jobs -l
 wait
+free -m
 if [[ $component == "regression" ]]
 then
 install_alerts master &
