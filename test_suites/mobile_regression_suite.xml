@@ -7,7 +7,7 @@
         </run>
     </groups>
     <!-- Stand Alone Tests -->
-    <test name="StandAlone Tests" parallel="classes" time-out="200000">
+    <test name="StandAlone Tests" parallel="classes">
         <classes>
             <class name="standAloneTests.ContextualHelpTest"/>
             <class name="standAloneTests.DrawerTest"/>
@@ -21,7 +21,7 @@
         </classes>
     </test>
     <!--Functional(JavaScript) Tests -->
-    <test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes" time-out="200000">
+    <test name="ElementsSDK: Functional(JavaScript) Tests" parallel="classes">
         <classes>
             <class name="elementsSDKTests.functionalTests.CalendarTest"/>
             <class name="elementsSDKTests.functionalTests.InputsTest"/>
@@ -40,7 +40,7 @@
         </classes>
     </test>
     <!-- Styles(CSS) Tests -->
-    <test name="ElementsSDK: Styles(CSS) Tests" parallel="classes" time-out="200000">
+    <test name="ElementsSDK: Styles(CSS) Tests" parallel="classes">
         <classes>
             <class name="elementsSDKTests.stylesTests.InputsTest"/>
             <class name="elementsSDKTests.stylesTests.TypographyTest"/>
