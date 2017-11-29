@@ -258,12 +258,12 @@ install_drawer master &
 install_contextualHelp master &
 install_avatarDisplay master &
 install_slider master &
-fi
-jobs -l
-wait
-free -m
-if [[ $component == "regression" ]]
-then
+#fi
+#jobs -l
+#wait
+#free -m
+#if [[ $component == "regression" ]]
+#then
 install_alerts master &
 install_pagination master &
 install_modal master &
